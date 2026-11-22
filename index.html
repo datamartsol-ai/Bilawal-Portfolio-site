@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad | Python, Scraping, Store Development & AI Automation</title>
+<meta name="description" content="Python development, data scraping, bulk product uploads, online store development and AI automation bots by Muhammad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#10243e;--muted:#5b6b80;--bg:#f6f8fb;--card:#fff;--line:#e2e8f0;--accent:#0f9d8a;--accent2:#e8590c;--soft:#e6f6f3}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.65 Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.2}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:32px;max-width:60ch}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+nav b{font-family:Sora;font-size:1.1rem}
+nav div{display:flex;gap:18px;overflow-x:auto;font-size:.92rem;font-weight:500}
+nav a{text-decoration:none;color:var(--muted);white-space:nowrap}
+nav a:hover{color:var(--accent)}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;border:0;cursor:pointer;font:600 15px Inter}
+.btn.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:center;padding:64px 0}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:16px}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:56ch;margin-bottom:24px;white-space:pre-line}
+.pic{position:relative;width:100%;aspect-ratio:1;border-radius:24px;background:var(--soft) center/cover;border:6px solid #fff;box-shadow:0 18px 40px rgba(16,36,62,.15);display:grid;place-items:center;font:700 5rem Sora;color:var(--accent)}
+/* floating banners */
+.banner{background:var(--ink);padding:26px 0;overflow:hidden}
+.track{display:flex;gap:16px;width:max-content;animation:sway 14s ease-in-out infinite alternate}
+.track span{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2);padding:12px 22px;border-radius:999px;font:600 1rem Sora;white-space:nowrap}
+.track span:nth-child(even){background:var(--accent);border-color:var(--accent)}
+.banner h2{color:#fff;text-align:center;font-size:1.1rem;margin-bottom:16px}
+@keyframes sway{from{transform:translateX(0)}to{transform:translateX(calc(100vw - 100% - 40px))}}
+@media(min-width:1500px){.track{animation-name:none;margin:auto}}
+/* services */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px}
+.card h3{font-size:1.15rem;margin-bottom:12px}
+.card ul{list-style:none;padding:0}
+.card li{padding:7px 0 7px 22px;position:relative;border-top:1px solid var(--line);font-size:.95rem}
+.card li:before{content:"";position:absolute;left:4px;top:15px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.card p{color:var(--muted);font-size:.95rem}
+.card.hl{background:var(--ink);color:#fff}.card.hl p{color:#c5d2e3}
+/* portfolio */
+.proj img,.proj .ph{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;background:var(--soft);display:grid;place-items:center;color:var(--muted);font-size:.9rem;margin-bottom:14px}
+.proj p{white-space:pre-line}
+/* reviews */
+.quote{font-size:1rem;margin-bottom:14px;white-space:pre-line}
+.who b{display:block}.who span{color:var(--muted);font-size:.9rem}
+.videos{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:28px}
+.videos iframe,.videos video{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;background:#000}
+/* pricing */
+.price{font:800 2.4rem Sora;margin:6px 0}
+.price small{font:500 .9rem Inter;color:var(--muted)}
+.card.hl .price small{color:#c5d2e3}
+/* footer */
+footer{background:var(--ink);color:#c5d2e3;padding:56px 0 28px}
+footer h2{color:#fff}
+.contacts{display:flex;flex-wrap:wrap;gap:14px;margin:20px 0 32px}
+.contacts a{padding:12px 20px;border-radius:8px;background:rgba(255,255,255,.08);color:#fff;text-decoration:none;font-weight:600}
+.contacts a:hover{background:var(--accent)}
+.copy{font-size:.85rem;border-top:1px solid rgba(255,255,255,.15);padding-top:18px}
+.copy a{color:#8fa3bd}
+/* edit mode */
+.ed{display:none}
+body.edit .ed{display:inline-block}
+body.edit [data-e]{outline:2px dashed var(--accent2);outline-offset:3px;cursor:text}
+.bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:50;background:#fff;border-top:3px solid var(--accent2);padding:10px 20px;gap:10px;align-items:center;flex-wrap:wrap}
+body.edit .bar{display:flex}
+.sm{padding:6px 12px;border-radius:6px;border:1px solid var(--line);background:#fff;font:500 13px Inter;cursor:pointer;margin-top:10px;margin-right:6px}
+.sm.del{color:#b42318}
+.ef{display:none;width:100%;margin-top:8px;padding:8px;border:1px solid var(--line);border-radius:6px;font:14px Inter}
+body.edit .ef{display:block}
+body.edit{padding-bottom:70px}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(16,36,62,.6);display:grid;place-items:center;padding:20px}
+.modal[hidden]{display:none}
+.modal form{background:#fff;border-radius:14px;padding:28px;width:100%;max-width:380px}
+.modal p{color:var(--muted);font-size:.92rem;margin:8px 0 14px}
+.modal input{display:block;width:100%;padding:11px;margin-bottom:10px;border:1px solid var(--line);border-radius:8px;font:15px Inter}
+#me{color:#b42318;margin:12px 0 0}
+#st{font-size:.85rem;color:var(--muted)}
+.stars{display:flex;gap:2px;margin-bottom:10px}
+.stars button{background:none;border:0;font-size:2.2rem;line-height:1;color:#cbd5e1;cursor:pointer;padding:0 2px}
+.stars button.on{color:var(--accent2)}
+.starsv{color:var(--accent2);font-size:1.15rem;letter-spacing:2px;margin-bottom:8px}
+.modal textarea{display:block;width:100%;padding:11px;margin-bottom:10px;border:1px solid var(--line);border-radius:8px;font:15px Inter;resize:vertical}
+.edb{display:none;margin-top:28px}
+body.edit .edb{display:block}
+.edb input{padding:10px;border:1px solid var(--line);border-radius:8px;font:14px Inter;margin:4px 6px 4px 0;max-width:100%}
+.crow{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 0;border-top:1px solid var(--line);font-size:.92rem}
+.crow span{color:var(--muted)}
+code{background:var(--soft);padding:2px 8px;border-radius:6px;font-weight:600}
+a.sm{text-decoration:none;color:var(--ink);display:inline-block}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:40px 0}.pic{max-width:240px}section{padding:52px 0}}
+@media(prefers-reduced-motion:reduce){.track{animation:none;flex-wrap:wrap;width:auto;justify-content:center;padding:0 20px}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Muhammad</b><div><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#reviews">Reviews</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div><button class="btn" id="custBtn" style="padding:8px 14px;font-size:14px;white-space:nowrap" onclick="custLogin()">Customer login</button></div></nav>
+
+<header class="wrap hero" id="top">
+  <div>
+    <h1 data-e="profile.name"></h1>
+    <p data-e="profile.desc"></p>
+    <a class="btn" href="#pricing">See pricing</a> <a class="btn alt" href="#contact">Contact me</a>
+  </div>
+  <div>
+    <div class="pic" id="pic"></div>
+    <button class="sm ed" onclick="pickImg(d=>{S.profile.img=d;dirty();render()})">Change picture</button>
+  </div>
+</header>
+
+<div class="banner" aria-label="Our services">
+  <h2>Our Services</h2>
+  <div class="track"><span>Python Development</span><span>Product Scraping &amp; Uploads</span><span>Online Store Design &amp; Development</span><span>AI Automation Bots</span><span>Data Scraping</span><span>Shopify · WooCommerce · eBay</span></div>
+</div>
+
+<section id="services"><div class="wrap">
+  <h2>What I can build for you</h2>
+  <p class="sub">Four service areas, one person to deal with from brief to delivery.</p>
+  <div class="grid">
+    <div class="card"><h3>Python Development</h3><ul><li>Data scraping</li><li>Web scraper tool</li><li>Automation bots</li><li>Data cleansing and formatting</li></ul></div>
+    <div class="card"><h3>Product Scraping and Uploads</h3><ul><li>Product scraping from any online store or marketplace</li><li>Bulk product listing on commerce web stores</li><li>Shopify product listing</li><li>WooCommerce product upload</li><li>eBay product listing</li><li>PrestaShop product upload</li></ul></div>
+    <div class="card"><h3>Complete online store design and development</h3><ul><li>Shopify store design</li><li>WooCommerce website development</li><li>Custom websites development</li></ul></div>
+    <div class="card hl"><h3>AI automation bots development</h3><p>Bots that handle repetitive work for your business, built around your process and tools.</p></div>
+  </div>
+</div></section>
+
+<section id="portfolio" style="background:#fff"><div class="wrap">
+  <h2>Portfolio</h2>
+  <p class="sub">A selection of recent projects.</p>
+  <div class="grid" id="portfolioList" data-render></div>
+  <button class="sm ed" id="addProj" onclick="addProject()">Add project (max 5)</button>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+  <h2>Customer reviews</h2>
+  <p class="sub">What clients say after the work is delivered.</p>
+  <div class="grid" id="reviewList" data-render></div>
+  <button class="sm ed" onclick="addReview()">Add review</button>
+  <div class="card edb" id="custPanel">
+    <h3>Customers</h3>
+    <p class="sub" style="margin-bottom:12px">Add a customer to create their login code. They log in with it and post a star review that appears here automatically.</p>
+    <input id="cn" placeholder="Customer name" aria-label="Customer name"><input id="ce" type="email" placeholder="Customer email" aria-label="Customer email"><button class="btn" style="padding:10px 18px" onclick="addCustomer()">Add customer and create code</button>
+    <div id="custList"></div>
+  </div>
+  <div class="videos" id="videoList" data-render></div>
+</div></section>
+
+<section id="pricing" style="background:#fff"><div class="wrap">
+  <h2>Pricing</h2>
+  <p class="sub">Clear starting prices. Larger or custom jobs are quoted after a short chat.</p>
+  <div class="grid" id="priceList" data-render></div>
+  <button class="sm ed" onclick="addPlan()">Add package</button>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+  <h2>Let's work together</h2>
+  <p>Send a message with your project and I will reply with a plan and quote.</p>
+  <div class="contacts">
+    <a href="mailto:datamartsol@gmail.com">Email: datamartsol@gmail.com</a>
+    <a href="https://wa.me/16466212409" target="_blank" rel="noopener">WhatsApp: +1 (646) 621-2409</a>
+  </div>
+  <div class="copy">&copy; <span id="yr"></span> Muhammad. All rights reserved. <a href="#edit" onclick="startEdit();return false">Owner login</a></div>
+</div></footer>
+
+<div class="bar">
+  <b>Edit mode</b>
+  <button class="btn" id="saveBtn" onclick="saveAll()">Save and publish</button>
+  <button class="sm" onclick="pwModal()">Change password</button>
+  <button class="sm" onclick="logout()">Log out</button>
+  <span id="st">All changes saved</span>
+</div>
+<div class="modal" id="M" hidden><form id="mf"><h3 id="mt"></h3><p id="mm"></p><div id="mi"></div><button class="btn" id="mb">Continue</button> <button type="button" class="sm" onclick="closeM()">Cancel</button><p id="me" role="alert"></p></form></div>
+
+<script id="app-js">
+var DEFAULT={"profile":{"name":"Muhammad","desc":"I build Python scrapers and automation bots, upload products in bulk to online stores, and design complete e-commerce websites.\nTell me what you need done and I will deliver it fast.","img":""},"portfolio":[],"reviews":[],"videos":["","",""],"pricing":[{"title":"Python services","price":"$100","unit":"Python development","desc":"Scrapers, bots and data tools written in Python.","hl":false},{"title":"Website services","price":"$300","unit":"website services","desc":"Store design and website development.","hl":false},{"title":"AI services","price":"$350","unit":"AI automation","desc":"AI automation bot development.","hl":true},{"title":"Product upload","price":"$100","unit":"per 1,000 simple products","desc":"Bulk listing on Shopify, WooCommerce, eBay and more.","hl":false}]};
+var S=JSON.parse(JSON.stringify(DEFAULT)),TOK=sessionStorage.getItem("tok")||"",isDirty=false,cid="";
+const $=id=>document.getElementById(id);
+const esc=t=>{var d=document.createElement("div");d.textContent=t==null?"":t;return d.innerHTML.replace(/"/g,"&quot;")};
+var CTOK=sessionStorage.getItem("ctok")||"",CUS=null,CR=[],CL=[];try{CUS=JSON.parse(sessionStorage.getItem("cus"))}catch(e){}
+const E=p=>' data-e="'+p+'"';
+function api(path,body,auth){
+  return fetch("/api/"+path,{method:body?"POST":"GET",headers:Object.assign({"content-type":"application/json"},auth?{authorization:"Bearer "+(auth===true?TOK:auth)}:{}),body:body?JSON.stringify(body):undefined})
+   .then(r=>r.json().catch(()=>({})).then(j=>{if(!r.ok){var e=new Error(j.error||("Server problem (code "+r.status+"). "+(r.status==404?"The backend (api.mjs) is not deployed on this site.":"The backend crashed. Check Netlify, Functions, api, logs.")));e.status=r.status;throw e}return j}))
+}
+function dirty(){isDirty=true;$("st").textContent="Unsaved changes";$("saveBtn").disabled=false}
+window.onbeforeunload=()=>isDirty?"You have unsaved changes":undefined;
+function setP(path,v){var k=path.split("."),o=S;for(var i=0;i<k.length-1;i++)o=o[k[i]];o[k[k.length-1]]=v}
+function pickImg(cb){var i=document.createElement("input");i.type="file";i.accept="image/*";i.onchange=()=>{var f=i.files[0];if(!f)return;var r=new FileReader();r.onload=()=>{var im=new Image();im.onload=()=>{var s=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*s;c.height=im.height*s;c.getContext("2d").drawImage(im,0,0,c.width,c.height);cb(c.toDataURL("image/jpeg",.8))};im.src=r.result};r.readAsDataURL(f)};i.click()}
+function vidHtml(u){if(!u)return"";var m=u.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);if(m)return'<iframe src="https://www.youtube.com/embed/'+m[1]+'" allowfullscreen loading="lazy" title="Client video review"></iframe>';return'<video src="'+esc(u)+'" controls preload="metadata"></video>'}
+function render(){
+  var p=S.profile;
+  document.querySelector('[data-e="profile.name"]').textContent=p.name;
+  document.querySelector('[data-e="profile.desc"]').textContent=p.desc;
+  var pic=$("pic");pic.style.backgroundImage=p.img?'url("'+p.img+'")':"";pic.textContent=p.img?"":(p.name||"M").charAt(0);
+  var h="";
+  S.portfolio.forEach((x,i)=>{h+='<div class="card proj">'+(x.img?'<img src="'+x.img+'" alt="'+esc(x.title)+'">':'<div class="ph">No image yet</div>')+'<h3'+E("portfolio."+i+".title")+'>'+esc(x.title)+'</h3><p'+E("portfolio."+i+".desc")+'>'+esc(x.desc)+'</p><button class="sm ed" onclick="pickImg(d=>{S.portfolio['+i+'].img=d;dirty();render()})">Change image</button><button class="sm ed del" onclick="S.portfolio.splice('+i+',1);dirty();render()">Remove</button></div>'});
+  $("portfolioList").innerHTML=h||'<p class="sub">Projects will appear here.</p>';
+  $("addProj").style.display=S.portfolio.length>=5?"none":"";
+  h="";
+  S.reviews.forEach((x,i)=>{h+='<div class="card"><p class="quote"'+E("reviews."+i+".text")+'>'+esc(x.text)+'</p><div class="who"><b'+E("reviews."+i+".name")+'>'+esc(x.name)+'</b><span'+E("reviews."+i+".loc")+'>'+esc(x.loc)+'</span></div><button class="sm ed del" onclick="S.reviews.splice('+i+',1);dirty();render()">Remove</button></div>'});
+  CR.forEach(x=>{h+='<div class="card"><div class="starsv" role="img" aria-label="'+x.stars+' out of 5 stars">'+"\u2605".repeat(x.stars)+"\u2606".repeat(5-x.stars)+'</div><p class="quote">'+esc(x.text)+'</p><div class="who"><b>'+esc(x.name)+'</b><span>Verified client</span></div><button class="sm ed del" onclick="rmCR(\''+x.id+'\')">Remove</button></div>'});
+  $("reviewList").innerHTML=h||'<p class="sub">Reviews will appear here.</p>';
+  $("custBtn").textContent=CTOK?"Leave a review":"Customer login";
+  h="";
+  S.videos.forEach((u,i)=>{h+='<div>'+vidHtml(u)+'<input class="ef" placeholder="Video review '+(i+1)+': YouTube link or direct .mp4 link" value="'+esc(u)+'" onchange="S.videos['+i+']=this.value.trim();dirty();render()"></div>'});
+  $("videoList").innerHTML=h;
+  h="";
+  S.pricing.forEach((x,i)=>{h+='<div class="card'+(x.hl?" hl":"")+'"><h3'+E("pricing."+i+".title")+'>'+esc(x.title)+'</h3><div class="price"><span'+E("pricing."+i+".price")+'>'+esc(x.price)+'</span> <small'+E("pricing."+i+".unit")+'>'+esc(x.unit)+'</small></div><p'+E("pricing."+i+".desc")+'>'+esc(x.desc)+'</p><button class="sm ed" onclick="S.pricing['+i+'].hl=!S.pricing['+i+'].hl;dirty();render()">Toggle highlight</button><button class="sm ed del" onclick="S.pricing.splice('+i+',1);dirty();render()">Remove</button></div>'});
+  $("priceList").innerHTML=h;
+  if(document.body.classList.contains("edit"))enable();
+}
+function enable(){document.querySelectorAll("[data-e]").forEach(el=>{el.contentEditable="plaintext-only";el.oninput=()=>{setP(el.dataset.e,el.innerText.trim());dirty()}})}
+function addProject(){if(S.portfolio.length>=5)return;S.portfolio.push({title:"Project title",desc:"Describe the project and the result.",img:""});dirty();render()}
+function addReview(){S.reviews.push({text:"Customer comment",name:"Customer name",loc:"City, Country"});dirty();render()}
+function addPlan(){S.pricing.push({title:"New package",price:"$0",unit:"per project",desc:"What is included.",hl:false});dirty();render()}
+/* modal */
+function closeM(){$("M").hidden=true}
+function setStar(n){var hi=document.querySelector("#mi input[type=hidden]");if(!hi)return;hi.value=n;document.querySelectorAll("#mi .stars button").forEach(b=>b.classList.toggle("on",+b.dataset.n<=n))}
+function modal(title,msg,fields,btn,onok){
+  $("mt").textContent=title;$("mm").textContent=msg;$("mb").textContent=btn;$("mb").disabled=false;$("me").textContent="";
+  $("mi").innerHTML=fields.map(f=>f[1]=="stars"?'<div class="stars" role="group" aria-label="Rating">'+[1,2,3,4,5].map(n=>'<button type="button" data-n="'+n+'" aria-label="'+n+' star'+(n>1?"s":"")+'" onclick="setStar('+n+')">\u2605</button>').join("")+'</div><input type="hidden" data-f value="0">':f[1]=="textarea"?'<textarea data-f rows="5" placeholder="'+f[0]+'" aria-label="'+f[0]+'">'+esc(f[2]||"")+'</textarea>':'<input data-f type="'+f[1]+'" placeholder="'+f[0]+'" aria-label="'+f[0]+'" autocomplete="off">').join("");
+  var sf=fields.find(f=>f[1]=="stars");if(sf)setStar(+sf[2]||0);
+  $("M").hidden=false;var f0=$("mi").querySelector("input:not([type=hidden]),textarea");if(f0)f0.focus();
+  $("mf").onsubmit=async e=>{e.preventDefault();var v=[].map.call($("mi").querySelectorAll("[data-f]"),x=>x.value);$("mb").disabled=true;try{await onok(v)}catch(x){$("me").textContent=x.message;$("mb").disabled=false}}
+}
+function startEdit(){
+  if(TOK){enter();return}
+  modal("Owner login","Enter your admin password.",[["Password","password"]],"Log in",async v=>{
+    var t=await api("login",{password:v[0]});TOK=t.token;sessionStorage.setItem("tok",TOK);closeM();enter()})
+}
+function enter(){document.body.classList.add("edit");render();loadCustomers()}
+async function refresh(){try{var c=await api("content");CR=c.customerReviews||[]}catch(e){}render()}
+function custLogin(){
+  if(CTOK&&CUS){reviewModal();return}
+  modal("Customer login","Enter the login code you received from Muhammad.",[["Login code","text"]],"Log in",async v=>{
+    var r=await api("customer-login",{code:v[0]});CTOK=r.token;CUS=r.customer;sessionStorage.setItem("ctok",CTOK);sessionStorage.setItem("cus",JSON.stringify(CUS));render();reviewModal()})
+}
+function reviewModal(){
+  var r=CUS.review||{};
+  modal("Hi "+CUS.name,"Rate your experience and write your review. It appears on the website right away.",[["Your rating","stars",r.stars||0],["Write your review","textarea",r.text||""]],r.stars?"Update review":"Post review",async v=>{
+    if(!+v[0])throw new Error("Choose a star rating.");
+    if(!v[1].trim())throw new Error("Write a few words about your experience.");
+    try{var res=await api("review-post",{stars:+v[0],text:v[1]},CTOK)}catch(e){if(e.status==401){CTOK="";CUS=null;sessionStorage.removeItem("ctok");sessionStorage.removeItem("cus");render()}throw e}
+    CUS.review=res.review;sessionStorage.setItem("cus",JSON.stringify(CUS));await refresh();closeM();location.hash="reviews"})
+}
+async function rmCR(id){if(!confirm("Remove this customer review?"))return;try{await api("review-remove",{id:id},true);await refresh()}catch(e){$("st").textContent=e.message}}
+async function loadCustomers(){try{CL=(await api("customers",null,true)).customers}catch(e){if(e.status==401){TOK="";sessionStorage.removeItem("tok")}}drawCust()}
+function mailTo(c){var u=location.origin+location.pathname;return"mailto:"+encodeURIComponent(c.email)+"?subject="+encodeURIComponent("Please share your experience")+"&body="+encodeURIComponent("Hi "+c.name+",\n\nThank you for working with me. I would love your feedback.\n\n1. Open "+u+"\n2. Click Customer login at the top\n3. Enter your login code: "+c.code+"\n\nThen choose your stars and write your review.\n\nMuhammad")}
+function drawCust(){$("custList").innerHTML=CL.map((c,i)=>'<div class="crow"><div><b>'+esc(c.name)+'</b> <span>'+esc(c.email)+'</span><br>Code: <code>'+esc(c.code)+'</code></div><div><button class="sm" onclick="cpy('+i+')">Copy code</button><a class="sm" href="'+esc(mailTo(c))+'">Email code</a><button class="sm del" onclick="rmCust('+i+')">Remove</button></div></div>').join("")||'<p class="sub" style="margin:12px 0 0">No customers yet.</p>'}
+function cpy(i){var t=CL[i].code;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>$("st").textContent="Code copied: "+t).catch(()=>prompt("Copy this code",t))}
+async function addCustomer(){var n=$("cn").value.trim(),e=$("ce").value.trim();if(!n||!/^\S+@\S+\.\S+$/.test(e)){$("st").textContent="Enter the customer's name and a valid email.";return}
+  try{var r=await api("customer-add",{name:n,email:e},true);CL.unshift(r.customer);$("cn").value=$("ce").value="";drawCust();$("st").textContent="Customer added. Copy the code and send it to them."}catch(x){$("st").textContent=x.message}}
+async function rmCust(i){if(!confirm("Remove "+CL[i].name+"? Their code will stop working."))return;try{await api("customer-remove",{id:CL[i].id},true);CL.splice(i,1);drawCust()}catch(x){$("st").textContent=x.message}}
+function logout(){sessionStorage.removeItem("tok");TOK="";isDirty=false;location.hash="";location.reload()}
+function pwModal(){modal("Change password","Use at least 8 characters.",[["Current password","password"],["New password","password"],["Repeat new password","password"]],"Change password",async v=>{
+  if(v[1]!==v[2])throw new Error("New passwords do not match.");
+  await api("change-password",{current:v[0],next:v[1]},true);closeM();$("st").textContent="Password changed"})}
+async function saveAll(){
+  $("saveBtn").disabled=true;$("st").textContent="Saving...";
+  try{await api("save",{content:S},true);isDirty=false;$("st").textContent="Published. Changes are live."}
+  catch(e){$("saveBtn").disabled=false;$("st").textContent=e.message;if(e.status==401){TOK="";sessionStorage.removeItem("tok");startEdit()}}
+}
+$("yr").textContent=new Date().getFullYear();
+api("content").then(c=>{CR=(c&&c.customerReviews)||[];if(c)delete c.customerReviews;if(c&&c.profile)S=Object.assign(JSON.parse(JSON.stringify(DEFAULT)),c)}).catch(()=>{}).then(()=>{render();if(location.hash=="#edit")startEdit()});
+</script>
+</body>
+</html>
